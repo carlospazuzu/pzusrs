@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# frozen_string_literal: true
+
+# default values for mastery levels
+MasteryLevel.create(level: 0, title: '無段')
+MasteryLevel.create(level: 1, title: '農民')
+MasteryLevel.create(level: 2, title: '浪士')
+MasteryLevel.create(level: 3, title: '侍')
+MasteryLevel.create(level: 4, title: '大名')
+MasteryLevel.create(level: 5, title: '将軍')
+MasteryLevel.create(level: 6, title: '皇帝')

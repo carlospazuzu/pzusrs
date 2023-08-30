@@ -1,0 +1,2 @@
+class MasteryLevel < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ReviewQueue < ApplicationRecord
+end
