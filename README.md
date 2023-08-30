@@ -3,4 +3,6 @@
 Dockerfile created using the official documentation docker samples
 https://github.com/docker/awesome-compose/tree/master/official-documentation-samples/rails/
 
+## Database Diagram
 
+![Database](database-diagram.png)
