@@ -8,6 +8,12 @@ RSpec.describe Vocabulary, type: :model do
     it { is_expected.to validate_presence_of(:reading) }
     it { is_expected.to validate_presence_of(:mastery_level) }
     it { is_expected.to validate_uniqueness_of(:word) }
+    it { is_expected.to validate_numericality_of(:mastery_level).is_greater_than_or_equal_to(0) }
+  end
+
+  describe 'Associations' do
+    it { is_expected.to have_and_belong_to_many(:review_lists) }
+    it { is_expected.to have_and_belong_to_many(:review_queues) }
   end
 
   context 'When creating a new vocabulary instance' do

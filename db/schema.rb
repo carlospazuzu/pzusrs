@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_30_014848) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_30_173233) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,11 +25,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_30_014848) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "review_lists_vocabularies", force: :cascade do |t|
+    t.bigint "vocabulary_id"
+    t.bigint "review_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_list_id"], name: "index_review_lists_vocabularies_on_review_list_id"
+    t.index ["vocabulary_id"], name: "index_review_lists_vocabularies_on_vocabulary_id"
+  end
+
   create_table "review_queues", force: :cascade do |t|
     t.integer "vocabulary_id"
     t.date "review_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "review_queues_vocabularies", force: :cascade do |t|
+    t.bigint "review_queue_id"
+    t.bigint "vocabulary_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_queue_id"], name: "index_review_queues_vocabularies_on_review_queue_id"
+    t.index ["vocabulary_id"], name: "index_review_queues_vocabularies_on_vocabulary_id"
   end
 
   create_table "vocabularies", force: :cascade do |t|
